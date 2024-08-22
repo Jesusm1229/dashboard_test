@@ -4,8 +4,8 @@ import { invalidateCacheAction } from "@/actions/invalidate-cache-action";
 import { cn } from "@/lib/utils";
 import { createClient } from "@/packages/supabase/src/client/client";
 import { getCurrentUserTeamQuery } from "@/packages/supabase/src/queries";
-import { ContextMenu, ContextMenuTrigger, ContextMenuContent, ContextMenuItem } from "@/packages/ui/src/components/context-menu";
-import { useToast } from "@/packages/ui/src/components/use-toast";
+import { ContextMenu, ContextMenuTrigger, ContextMenuContent, ContextMenuItem } from "@/components/ui/components/context-menu";
+import { useToast } from "@/components/ui/components/use-toast";
 import { useVaultContext } from "@/store/vault/hook";
 import { resumableUpload } from "@/utils/upload";
 import { useParams } from "next/navigation";
@@ -44,7 +44,7 @@ export function UploadZone({ children }: { children: React.ReactNode }) {
     }
   }, [showProgress, progress, toastId]);
 
-  const onDrop = async (files: File[]) => {
+  const onDrop = async (files) => {
     // NOTE: If onDropRejected
     if (!files.length) {
       return;
@@ -94,7 +94,7 @@ export function UploadZone({ children }: { children: React.ReactNode }) {
       setShowProgress(false);
       setToastId(null);
       dismiss(toastId);
-      invalidateCacheAction([`vault_${userData}`]);
+      invalidateCacheAction([`vault_${userData.id}`]);
     } catch {
       toast({
         duration: 2500,
@@ -104,7 +104,7 @@ export function UploadZone({ children }: { children: React.ReactNode }) {
     }
   };
 
-  const { getRootProps, getInputProps, isDragActive, acceptedFiles } = useDropzone({
+  const { getRootProps, getInputProps, isDragActive } = useDropzone({
     onDrop,
     onDropRejected: ([reject]) => {
       if (reject?.errors.find(({ code }) => code === "file-too-large")) {

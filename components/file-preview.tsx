@@ -1,26 +1,16 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import { Dialog, DialogTrigger, DialogContentFrameless } from "@/packages/ui/src/components/dialog";
-import { Icons } from "@/packages/ui/src/components/icons";
-import { Skeleton } from "@/packages/ui/src/components/skeleton";
+import { Dialog, DialogTrigger, DialogContentFrameless } from "@/components/ui/components/dialog";
+import { Icons } from "@/components/ui/components/icons";
+import { Skeleton } from "@/components/ui/components/skeleton";
 import { FileType } from "@/packages/utils";
-/* import { Button } from "@midday/ui/button";
-import { cn } from "@midday/ui/cn"; */
-/* import {
-  Dialog,
-  DialogContentFrameless,
-  DialogTrigger,
-} from "@midday/ui/dialog"; */
-/* import { Icons } from "@midday/ui/icons";
-import { Skeleton } from "@midday/ui/skeleton";
-import { FileType } from "@midday/utils"; */
+import { Button } from "@/components/ui/components/button";
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { Document, Page, pdfjs } from "react-pdf";
 import "react-pdf/dist/esm/Page/AnnotationLayer.css";
 import "react-pdf/dist/esm/Page/TextLayer.css";
-import { Button } from "./ui/button";
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.js`;
 

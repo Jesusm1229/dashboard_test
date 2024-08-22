@@ -1,7 +1,8 @@
 "use server";
-
-import { createClient } from "@/packages/supabase/src/client/server";
+/* 
+import { createClient } from "@/packages/supabase/src/client/server"; */
 import { getSession } from "@/packages/supabase/src/queries/cached-queries";
+import { createClient } from "@/utils/supabase/server";
 /* import { LogEvents } from "@midday/events/events";
 import { setupAnalytics } from "@midday/events/server";
 import { getSession } from "@midday/supabase/cached-queries";

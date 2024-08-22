@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import { Icons } from "@/packages/ui/src/components/icons";
+import { Icons } from "@/components/ui/components/icons";
 
 export function FileIcon({ mimetype, name, isFolder, size = 16, className }: { mimetype?: string; name?: string; isFolder?: boolean; size?: number; className?: string }) {
   if (name === "exports") {

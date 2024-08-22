@@ -2,7 +2,7 @@
 
 
 import { signOutAction } from "@/actions/sign-out-action";
-import { DropdownMenuItem } from "@/packages/ui/src/components/dropdown-menu";
+import { DropdownMenuItem } from "@/components/ui/components/dropdown-menu";
 import { useState } from "react";
 
 export function SignOut() {

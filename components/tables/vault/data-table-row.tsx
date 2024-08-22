@@ -17,15 +17,15 @@ import {
   DropdownMenuSubContent,
   DropdownMenuSubTrigger,
   DropdownMenuTrigger,
-} from "@/packages/ui/src/components/dropdown-menu";
+} from "@/components/ui/components/dropdown-menu";
 import {
   HoverCard,
   HoverCardContent,
   HoverCardTrigger,
-} from "@/packages/ui/src/components/hover-card";
-import { Icons } from "@/packages/ui/src/components/icons";
-import { Input } from "@/packages/ui/src/components/input";
-import { TableCell, TableRow } from "@/packages/ui/src/components/table";
+} from "@/components/ui/components/hover-card";
+import { Icons } from "@/components/ui/components/icons";
+import { Input } from "@/components/ui/components/input";
+import { TableCell, TableRow } from "@/components/ui/components/table";
 /* import { useToast } from "@packages/ui/src/components/use-toast"; */
 
 import { format } from "date-fns";
@@ -35,9 +35,9 @@ import Link from "next/link";
 import { useParams, usePathname } from "next/navigation";
 import { useState } from "react";
 import { isSupportedFilePreview } from "@/packages/utils";
-import { useToast } from "@/packages/ui/src/components/use-toast";
-import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle, AlertDialogTrigger } from "@/packages/ui/src/components/alert-dialog";
-import { ContextMenu, ContextMenuContent, ContextMenuItem, ContextMenuTrigger } from "@/packages/ui/src/components/context-menu";
+import { useToast } from "@/components/ui/components/use-toast";
+import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle, AlertDialogTrigger } from "@/components/ui/components/alert-dialog";
+import { ContextMenu, ContextMenuContent, ContextMenuItem, ContextMenuTrigger } from "@/components/ui/components/context-menu";
 /* import { useI18n } from "@/locales/client";
  */
 /* export const translatedFolderName = (t: any, folder: string) => {

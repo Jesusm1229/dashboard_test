@@ -1,8 +1,8 @@
 "use client";
 
 import { createClient } from "@/packages/supabase/src/client/client";
-import { Button } from "@/packages/ui/src/components/button";
-import { Icons } from "@/packages/ui/src/components/icons";
+import { Button } from "@/components/ui/components/button";
+import { Icons } from "@/components/ui/components/icons";
 
 import { Loader2 } from "lucide-react";
 import { useSearchParams } from "next/navigation";

@@ -9,7 +9,7 @@ import { formatSize } from "@/utils/format";
 } from "@midday/ui/hover-card";*/
 
 import { FileIcon } from "./file-icon";
-import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/packages/ui/src/components/hover-card";
+import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/components/hover-card";
 import { FileType, isSupportedFilePreview } from "@/packages/utils";
 
 type Props = {
@@ -46,14 +46,14 @@ export function VaultPreview({
             className="bg-[#F2F1EF] dark:bg-secondary flex items-center justify-center p-2 overflow-hidden mb-2"
             style={{ width: width + 20, height: height + 20 }}
           >
-            <FilePreview
+            {/* <FilePreview
               src={`/api/proxy?filePath=vault/${file?.path?.join("/")}`}
               name={filename || " "}
               type={file.mimetype}
               preview
               width={width}
               height={height}
-            />
+            /> */}
           </div>
 
           <span className="text-sm truncate w-[70px]">{filename}</span>
@@ -68,14 +68,14 @@ export function VaultPreview({
             className="w-[273px] h-[358px] p-0 overflow-hidden"
             sideOffset={-40}
           >
-            <FilePreview
+            {/*     <FilePreview
               src={`/api/proxy?filePath=vault/${file?.path?.join("/")}`}
               downloadUrl={`/api/download/file?path=${downloadPath}&filename=${filename}`}
               name={filename || " "}
               type={file.mimetype}
               width={280}
               height={365}
-            />
+            /> */}
           </HoverCardContent>
         )}
       </HoverCard>

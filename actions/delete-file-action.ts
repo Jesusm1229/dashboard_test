@@ -20,7 +20,7 @@ export const deleteFileAction = authActionClient
       path: [user.id, ...path],
     });
 
-    revalidateTag(`vault_${user.team_id}`);
+    revalidateTag(`vault_${user.id}`);
 
     return id;
   });

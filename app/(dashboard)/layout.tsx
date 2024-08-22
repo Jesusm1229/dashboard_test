@@ -7,12 +7,15 @@ type Props = {
 
 const DashboardLayout = ({ children }: Props) => {
     return (
-        <>
+        <div className="relative">
             <Header />
-            <main className={"px-3 lg:px-4"}>
+            <main className="mx-4  md:mx-10 pb-8">
                 {children}
             </main>
-        </>
+            {/* <main className={"px-3 lg:px-4"}>
+                {children}
+            </main> */}
+        </div>
     )
 }
 

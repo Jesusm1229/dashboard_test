@@ -1,7 +1,7 @@
 "use client";
 
-import { Button } from "@/packages/ui/src/components/button";
-import { Icons } from "@/packages/ui/src/components/icons";
+import { Button } from "@/components/ui/components/button";
+import { Icons } from "@/components/ui/components/icons";
 import { useVaultContext } from "@/store/vault/hook";
 
 export function CreateFolderButton() {

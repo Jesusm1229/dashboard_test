@@ -3,7 +3,7 @@
 import { useVaultContext } from "@/store/vault/hook";
 
 import { DataTableRow } from "./data-table-row";
-import { Table, TableHeader, TableRow, TableHead, TableBody } from "@/packages/ui/src/components/table";
+import { Table, TableHeader, TableRow, TableHead, TableBody } from "@/components/ui/components/table";
 
 
 export function DataTable({ teamId }: { teamId: string }) {

@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 
-import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/packages/ui/src/components/breadcrumb";
+import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/components/breadcrumb";
 
 
 export function Breadcrumbs({ folders = [] }) {

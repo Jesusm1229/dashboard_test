@@ -1,69 +1,224 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+html,
+body {
+  height: 100%;
+}
 
-@layer base {
-  :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-    --radius: 0.5rem;
-    --chart-1: 12 76% 61%;
-    --chart-2: 173 58% 39%;
-    --chart-3: 197 37% 24%;
-    --chart-4: 43 74% 66%;
-    --chart-5: 27 87% 67%;
+*:focus {
+  outline: none;
+}
+
+.skeleton-box {
+  background-color: hsl(var(--border));
+  color: hsl(var(--border)) !important;
+  user-select: none !important;
+  cursor: default !important;
+  animation: pulse 2s cubic-bezier(.4,0,.6,1) infinite;
+  border-color: transparent !important;
+}
+
+.skeleton-circle {
+  background-color: hsl(var(--border));
+  border-radius: 1000px !important;
+  color: hsl(var(--border)) !important;
+  user-select: none !important;
+  cursor: default !important;
+  animation: pulse 2s cubic-bezier(.4,0,.6,1) infinite;
+  border-color: transparent !important;
+}
+
+.skeleton-circle > *,
+.skeleton-box > *,
+.skeleton-line > * {
+  opacity: 0 !important;
+}
+
+.pin-field-container {
+  display: grid;
+  grid-auto-columns: max-content;
+  grid-auto-flow: column;
+  justify-content: center;
+  margin: 4rem 0;
+}
+
+.pin-field {
+  border: 1px solid hsl(var(--border));
+  background-color: hsl(var(--accent));
+  border-right: none;
+  font-size: 2rem;
+  height: 4rem;
+  outline: none;
+  text-align: center;
+  transition-duration: 250ms;
+  transition-property: color, border, box-shadow, transform;
+  width: 4rem;
+}
+
+.pin-field:last-of-type {
+  border-radius: 0 0.5rem 0.5rem 0;
+  border-right: 1px solid hsl(var(--border));
+}
+
+.pin-field:focus {
+  box-shadow: "0 0 0.25rem rgba(white, 0.5)";
+  opacity: 0.9;
+  outline: none;
+}
+
+.invalid {
+  animation: shake 0.2s ease-in-out 0s 2;
+}
+
+.pin-field:first-of-type {
+  border-radius: 0.5rem 0 0 0.5rem;
+}
+
+.pin-field[disabled] {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+@keyframes shake {
+  0% { transform: translateX(0rem); }
+  25% { transform: translateX(0.5rem); }
+  75% { transform: translateX(-0.5rem); }
+  100% { transform: translateX(0rem); }
+}
+
+/* Desktop App */
+html.todesktop {
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+html.todesktop header {
+  -webkit-app-region: drag;
+}
+
+html.todesktop header .no-drag {
+  -webkit-app-region: no-drag;
+}
+
+html.todesktop,
+html.todesktop div {
+  cursor: default !important;
+}
+
+html.todesktop,
+html.todesktop.div {
+  cursor: default !important;
+}
+
+html.todesktop a {
+  cursor: pointer !important;
+}
+
+.update-available {
+  background: #68A7FF;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  position: relative;
+}
+
+.update-available svg {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  top: 0;
+  left: 0;
+}
+
+.update-available svg path.svg-update{
+  opacity: 1;
+  transform: scale(1);
+}
+
+.update-available svg circle.svg-progress{
+  stroke-dashoffset: 16px;
+  stroke-dasharray: 16px;
+  transform: rotate(270deg);
+  transform-origin: center;
+}
+
+.update-available.progress svg path.svg-update,
+.update-available.update-downloaded svg path.svg-update {
+  opacity: 0;
+  transform: scale(.5);
+}
+
+.update-available.progress svg circle.svg-progress {
+  stroke-dashoffset: 0px;
+  transform: rotate(270deg);
+  transition: all 4s linear;
+}
+
+.update-available svg path.svg-refresh{
+  opacity: 0;
+  transform: scale(.2) rotate(-135deg);
+  transition: all .3s ease;
+  transform-origin: center;
+}
+
+.update-available.update-downloaded svg path.svg-refresh{
+  opacity: 1;
+  transform: scale(1) rotate(0);
+}
+
+@keyframes anim-update {
+  0%{
+    transform: scale(0);
+    opacity: 1;
   }
-
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
+  100%{
+    transform: scale(4);
+    opacity: 0;
   }
 }
 
-@layer base {
-  * {
-    @apply border-border;
-  }
-  body {
-    @apply bg-background text-foreground;
-  }
+/* Desktop Command menu */
+html.light.todesktop-panel {
+  background-color: rgba(255,255,255,.5);
+}
+
+html.dark.todesktop-panel {
+  background-color: rgba(000,000,000,.3);
+}
+
+html.todesktop-panel body {
+  background-color: transparent !important;
+}
+
+.color-picker .react-colorful {
+  height: 240px;
+}
+.color-picker .react-colorful__saturation {
+  border-radius: 4px 4px 0 0;
+}
+.color-picker .react-colorful__hue {
+  height: 40px;
+  border-radius: 0 0 4px 4px;
+}
+
+.color-picker .react-colorful__hue-pointer {
+  width: 8px;
+  height: inherit;
+}
+
+.color-picker .react-colorful__pointer {
+  width: 15px;
+  height: 15px;
+}
+
+.color-picker .react-colorful__hue {
+  height: 20px;
+}
+
+.remove-arrow::-webkit-inner-spin-button,
+.remove-arrow::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.remove-arrow {
+    appearance: textfield;
 }

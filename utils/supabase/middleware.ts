@@ -1,7 +1,7 @@
-/* import { createServerClient } from '@supabase/ssr'
+import { createServerClient } from '@supabase/ssr'
 import { NextResponse, type NextRequest } from 'next/server'
 
-export async function updateSession(request: NextRequest, response: NextResponse) {
+export async function updateSession(request: NextRequest) {
     let supabaseResponse = NextResponse.next({
         request,
     })
@@ -60,9 +60,9 @@ export async function updateSession(request: NextRequest, response: NextResponse
     // of sync and terminate the user's session prematurely!
 
     return supabaseResponse
-} */
+}
 
-import { type CookieOptions, createServerClient } from "@supabase/ssr";
+/* import { type CookieOptions, createServerClient } from "@supabase/ssr";
 import type { NextRequest, NextResponse } from "next/server";
 
 export async function updateSession(
@@ -92,4 +92,4 @@ export async function updateSession(
     await supabase.auth.getUser();
 
     return response;
-}
+} */

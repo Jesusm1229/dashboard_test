@@ -2,8 +2,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { SignOut } from "./sign-out";
-import { Avatar, AvatarFallback } from "@/packages/ui/src/components/avatar";
-import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuGroup, DropdownMenuItem, DropdownMenuShortcut } from "@/packages/ui/src/components/dropdown-menu";
+import { Avatar, AvatarFallback } from "@/components/ui/components/avatar";
+import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuGroup, DropdownMenuItem, DropdownMenuShortcut } from "@/components/ui/components/dropdown-menu";
 import { getUser } from "@/packages/supabase/src/queries/cached-queries";
 
 export async function UserMenu({ onlySignOut }) {

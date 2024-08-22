@@ -1,6 +1,6 @@
 "use client";
 
-import { Button } from "@/packages/ui/src/components/button";
+import { Button } from "@/components/ui/components/button";
 
 
 type Props = {

@@ -5,7 +5,7 @@ import { Icons } from "@midday/ui/icons"; */
 import { createClient } from "@/packages/supabase/src/client/server";
 import { getVaultActivityQuery } from "@/packages/supabase/src/queries";
 import { getUser } from "@/packages/supabase/src/queries/cached-queries";
-import { Icons } from "@/packages/ui/src/components/icons";
+import { Icons } from "@/components/ui/components/icons";
 import Link from "next/link";
 import { VaultPreview } from "./vault-preview";
 
