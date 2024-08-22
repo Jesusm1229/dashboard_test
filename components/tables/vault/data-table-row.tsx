@@ -111,12 +111,6 @@ export function DataTableRow({ data, teamId }: { data: any; teamId: string }) {
   const { deleteItem, createFolder } = useVaultContext((s) => s);
 
   const folders = params?.folders ?? [];
-  /*   const isDefaultFolder = [
-      "exports",
-      "transactions",
-      "inbox",
-      "import",
-    ].includes(data.name); */
 
   const disableActions = ["transactions"].includes(folders?.at(0) ?? "");
   const folderPath = Array.isArray(folders) ? folders.join("/") : folders;
@@ -172,50 +166,34 @@ export function DataTableRow({ data, teamId }: { data: any; teamId: string }) {
 
   const filePreviewSupported = isSupportedFilePreview(data?.metadata?.mimetype);
 
-  console.log("data", data);
-
   return (
     <AlertDialog>
       <ContextMenu>
         <ContextMenuTrigger asChild>
           <TableRow className="h-[45px] cursor-default">
             <TableCell>
-              <HoverCard openDelay={200}>
-                <HoverCardTrigger>
-                  <div className="flex items-center space-x-2">
-                    <FileIcon
-                      mimetype={data?.metadata?.mimetype}
-                      name={data.name}
-                      isFolder={data.isFolder}
-                    />
 
-                    <RowTitle
-                      href={data.isFolder && `${pathname}/${data.name}`}
-                      name={data.name}
-                      isEditing={data.isEditing}
-                      path={folderPath}
-                    />
+              <div className="flex items-center space-x-2">
+                <FileIcon
+                  mimetype={data?.metadata?.mimetype}
+                  name={data.name}
+                  isFolder={data.isFolder}
+                />
 
-                    {data?.metadata?.size && (
-                      <span className="text-[#878787]">
-                        {formatSize(data.metadata.size)}
-                      </span>
-                    )}
-                  </div>
-                </HoverCardTrigger>
-                {filePreviewSupported && (
-                  <HoverCardContent className="w-[273px] h-[358px] p-0 overflow-hidden">
-                    <FilePreview
-                      width={280}
-                      height={365}
-                      src={`/api/proxy?filePath=vault/${teamId}/${filepath}`}
-                      downloadUrl={`/api/download/file?path=${filepath}&filename=${data.name}`}
-                      name={data.name}
-                      type={data?.metadata?.mimetype}
-                    />
-                  </HoverCardContent>
+                <RowTitle
+                  href={data.isFolder && `${pathname}/${data.name}`}
+                  name={data.name}
+                  isEditing={data.isEditing}
+                  path={folderPath}
+                />
+
+                {data?.metadata?.size && (
+                  <span className="text-[#878787]">
+                    {formatSize(data.metadata.size)}
+                  </span>
                 )}
-              </HoverCard>
+              </div>
+
             </TableCell>
             <TableCell>
               {data?.created_at ? format(new Date(data.created_at), "Pp") : "-"}
@@ -243,7 +221,7 @@ export function DataTableRow({ data, teamId }: { data: any; teamId: string }) {
                     {/* {!disableActions && !isDefaultFolder && (
                       <DropdownMenuItem>Rename</DropdownMenuItem>
                     )} */}
-                    <DropdownMenuItem>
+                    {/*   <DropdownMenuItem>
                       {data.isFolder ? (
                         <a
                           href={`/api/download/zip?path=${filepath}/${data.name}&filename=${data.name}`}
@@ -261,14 +239,14 @@ export function DataTableRow({ data, teamId }: { data: any; teamId: string }) {
                           Download
                         </a>
                       )}
-                    </DropdownMenuItem>
-                    {/*   {!disableActions && !isDefaultFolder && (
+                    </DropdownMenuItem> */}
+                    {
                       <AlertDialogTrigger asChild>
                         <DropdownMenuItem className="text-destructive">
                           Delete
                         </DropdownMenuItem>
                       </AlertDialogTrigger>
-                    )} */}
+                    }
                   </DropdownMenuContent>
                 </DropdownMenu>
               </div>
@@ -283,7 +261,7 @@ export function DataTableRow({ data, teamId }: { data: any; teamId: string }) {
               Create folder
             </ContextMenuItem>
           )} */}
-          <ContextMenuItem>
+          {/*   <ContextMenuItem>
             {data.isFolder ? (
               <a
                 href={`/api/download/zip?path=${filepath}/${data.name}&filename=${data.name}`}
@@ -301,14 +279,14 @@ export function DataTableRow({ data, teamId }: { data: any; teamId: string }) {
                 Download
               </a>
             )}
-          </ContextMenuItem>
-          {/* {!disableActions && !isDefaultFolder && (
+          </ContextMenuItem> */}
+          {(
             <AlertDialogTrigger asChild>
               <ContextMenuItem className="text-destructive">
                 Delete
               </ContextMenuItem>
             </AlertDialogTrigger>
-          )} */}
+          )}
         </ContextMenuContent>
 
         <AlertDialogContent>

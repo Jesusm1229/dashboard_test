@@ -13,7 +13,6 @@ const Header = () => {
                 <div className="flex items-center justify-between w-full mb-14">
                     <div className="flex items-center lg:gap-x-16">
                         <HeaderLogo />
-                        <Navigation />
                     </div>
                     <Suspense fallback={<Skeleton className="w-8 h-8 rounded-full" />}>
                         <UserMenu onlySignOut={true} />

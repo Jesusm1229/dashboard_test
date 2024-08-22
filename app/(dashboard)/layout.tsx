@@ -12,9 +12,6 @@ const DashboardLayout = ({ children }: Props) => {
             <main className="mx-4  md:mx-10 pb-8">
                 {children}
             </main>
-            {/* <main className={"px-3 lg:px-4"}>
-                {children}
-            </main> */}
         </div>
     )
 }

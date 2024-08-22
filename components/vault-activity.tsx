@@ -12,13 +12,13 @@ import { VaultPreview } from "./vault-preview";
 
 
 // TODO: Translate
-const defaultFolders = [
+/* const defaultFolders = [
   { id: "inbox", name: "Inbox" },
   { id: "exports", name: "Exports" },
   { id: "imports", name: "Imports" },
   { id: "transactions", name: "Transactions" },
 ];
-
+ */
 export async function VaultActivity() {
   const supabase = createClient({ db: { schema: "storage" } });
   const { data: userData } = await getUser();
@@ -52,19 +52,7 @@ export async function VaultActivity() {
           return <VaultPreview key={file.id} file={file} />;
         })}
 
-        {defaultFolders.map((folder) => {
-          return (
-            <Link key={folder.name} href={`/vault/${folder.id}`}>
-              <div className="flex flex-col items-center text-center">
-                <Icons.Folder
-                  size={65}
-                  className="text-[#878787] dark:text-[#2C2C2C] mb-0"
-                />
-                <span className="text-sm truncate w-[70px]">{folder.name}</span>
-              </div>
-            </Link>
-          );
-        })}
+
       </div>
     </div>
   );

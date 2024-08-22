@@ -23,19 +23,15 @@ export async function Table({ folders }) {
   const { data: userData } = await getUser();
 
 
-  console.log("data", data);
-
-
   return (
     <div>
       <VaultProvider data={data}>
-        {/* <VaultActivity /> */}
+        <VaultActivity />
 
         <div className="flex justify-between items-center h-[32px] mt-6">
           <Breadcrumbs folders={folders} />
-
           <div className="flex space-x-2">
-            <CreateFolderButton />
+            {/* <CreateFolderButton /> */}
             <UploadButton />
           </div>
         </div>

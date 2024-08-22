@@ -9,8 +9,6 @@ import { Table, TableHeader, TableRow, TableHead, TableBody } from "@/components
 export function DataTable({ teamId }: { teamId: string }) {
   const data = useVaultContext((s) => s.data);
 
-  console.log("data", data);
-
   return (
     <Table>
       <TableHeader className="border-0 z-50">

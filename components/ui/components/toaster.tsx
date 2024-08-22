@@ -12,7 +12,7 @@ import {
   ToastViewport,
 } from "./toast";
 import { useToast } from "./use-toast";
-import React = require("react");
+
 
 export function Toaster() {
   const { toasts } = useToast();
