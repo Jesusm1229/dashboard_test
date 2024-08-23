@@ -12,12 +12,12 @@ import { Button } from "@/components/ui/button";
 import toast from "react-hot-toast";
 import ToastButton from "./toast-button";
 
-export async function Table({ folders }) {
+export async function Table({ folders }: { folders: [] }) {
   const path = folders?.join("/");
 
   const { data } = await getVault({
     path: path && decodeURIComponent(path),
-    teamId: ""
+    userId: ""
   });
 
   const { data: userData } = await getUser();

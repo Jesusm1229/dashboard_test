@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: "Vault | Midday",
 };
 
-export default function Vault({ params }) {
+export default function Vault({ params }: { params: { folders: [] } }) {
 
   return <Table folders={params.folders} />;
 }
