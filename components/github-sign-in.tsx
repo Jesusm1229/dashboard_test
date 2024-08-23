@@ -6,7 +6,7 @@ import { Icons } from "@/components/ui/components/icons";
 
 import { Loader2 } from "lucide-react";
 import { useSearchParams } from "next/navigation";
-import { useState } from "react";
+import { Suspense, useState } from "react";
 
 export function GithubSignIn() {
   const [isLoading, setLoading] = useState(false);
@@ -51,18 +51,21 @@ export function GithubSignIn() {
   };
 
   return (
-    <Button
-      onClick={handleSignIn}
-      className="active:scale-[0.98] bg-primary px-6 py-4 text-secondary font-medium flex space-x-2 h-[40px] w-full"
-    >
-      {isLoading ? (
-        <Loader2 className="w-4 h-4 animate-spin" />
-      ) : (
-        <>
-          <Icons.Github />
-          <span>Continue with Github</span>
-        </>
-      )}
-    </Button>
+    <Suspense>
+      <Button
+        onClick={handleSignIn}
+        className="active:scale-[0.98] bg-primary px-6 py-4 text-secondary font-medium flex space-x-2 h-[40px] w-full"
+      >
+        {isLoading ? (
+          <Loader2 className="w-4 h-4 animate-spin" />
+        ) : (
+          <>
+            <Icons.Github />
+            <span>Continue with Github</span>
+          </>
+        )}
+      </Button>
+    </Suspense>
+
   );
 }
