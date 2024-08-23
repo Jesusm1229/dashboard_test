@@ -22,7 +22,6 @@ export async function Table({ folders }) {
 
   const { data: userData } = await getUser();
 
-
   return (
     <div>
       <VaultProvider data={data}>
