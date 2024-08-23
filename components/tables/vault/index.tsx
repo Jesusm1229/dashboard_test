@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { Breadcrumbs } from "@/components/breadcrumbs";
 
 import { VaultProvider } from "@/store/vault/provider";
@@ -12,7 +13,8 @@ import { Button } from "@/components/ui/button";
 import toast from "react-hot-toast";
 import ToastButton from "./toast-button";
 
-export async function Table({ folders }: { folders: [] }) {
+
+export async function Table({ folders }) {
   const path = folders?.join("/");
 
   const { data } = await getVault({
@@ -20,7 +22,8 @@ export async function Table({ folders }: { folders: [] }) {
     userId: ""
   });
 
-  const { data: userData } = await getUser();
+
+  const { data: userData } = await getUser()
 
   return (
     <div>

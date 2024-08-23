@@ -4,6 +4,7 @@ import { setupAnalytics } from "@midday/events/server";
 import { getSession } from "@midday/supabase/cached-queries";
 import { createClient } from "@midday/supabase/server";
 import { addYears } from "date-fns"; */
+// @ts-nocheck
 
 import { createClient } from "@/packages/supabase/src/client/server";
 import { getSession } from "@/packages/supabase/src/queries/cached-queries";

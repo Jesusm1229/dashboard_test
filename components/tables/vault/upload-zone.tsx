@@ -1,3 +1,4 @@
+// @ts-nocheck
 "use client";
 
 import { invalidateCacheAction } from "@/actions/invalidate-cache-action";

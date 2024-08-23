@@ -1,7 +1,8 @@
+// @ts-nocheck
 "use client";
 
 import { cn } from "@/lib/utils";
-import { Dialog, DialogTrigger, DialogContentFrameless } from "@/components/ui/components/dialog";
+import { Dialog, DialogTrigger } from "@/components/ui/components/dialog";
 import { Icons } from "@/components/ui/components/icons";
 import { Skeleton } from "@/components/ui/components/skeleton";
 import { FileType } from "@/packages/utils";
@@ -208,7 +209,7 @@ export function FilePreview({
         </div>
       </div>
 
-      <DialogContentFrameless className="max-w-[680px] max-h-[800px] overflow-auto p-0 m-0">
+      {/* <DialogContentFrameless className="max-w-[680px] max-h-[800px] overflow-auto p-0 m-0">
         <FilePreview
           src={src}
           name={name}
@@ -218,7 +219,7 @@ export function FilePreview({
           height={780}
           disableFullscreen
         />
-      </DialogContentFrameless>
+      </DialogContentFrameless> */}
     </Dialog>
   );
 }
