@@ -222,7 +222,7 @@ export function DataTableRow({ data, teamId }: { data: any; teamId: string }) {
                     {/* {!disableActions && !isDefaultFolder && (
                       <DropdownMenuItem>Rename</DropdownMenuItem>
                     )} */}
-                    {/*   <DropdownMenuItem>
+                    <DropdownMenuItem>
                       {data.isFolder ? (
                         <a
                           href={`/api/download/zip?path=${filepath}/${data.name}&filename=${data.name}`}
@@ -240,7 +240,7 @@ export function DataTableRow({ data, teamId }: { data: any; teamId: string }) {
                           Download
                         </a>
                       )}
-                    </DropdownMenuItem> */}
+                    </DropdownMenuItem>
                     {
                       <AlertDialogTrigger asChild>
                         <DropdownMenuItem className="text-destructive">
@@ -262,7 +262,7 @@ export function DataTableRow({ data, teamId }: { data: any; teamId: string }) {
               Create folder
             </ContextMenuItem>
           )} */}
-          {/*   <ContextMenuItem>
+          <ContextMenuItem>
             {data.isFolder ? (
               <a
                 href={`/api/download/zip?path=${filepath}/${data.name}&filename=${data.name}`}
@@ -280,7 +280,7 @@ export function DataTableRow({ data, teamId }: { data: any; teamId: string }) {
                 Download
               </a>
             )}
-          </ContextMenuItem> */}
+          </ContextMenuItem>
           {(
             <AlertDialogTrigger asChild>
               <ContextMenuItem className="text-destructive">
