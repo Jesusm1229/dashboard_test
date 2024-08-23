@@ -1,7 +1,4 @@
-import { Loader2 } from "lucide-react"
 import Image from "next/image";
-import { login, signup } from "./actions";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/components/accordion";
 import { GithubSignIn } from "@/components/github-sign-in";
 
 
@@ -28,22 +25,6 @@ export default function Page() {
                 <div className="flex items-center justify-center mt-8">
                     <div className="flex flex-col mt-6 mb-6 pointer-events-auto">
                         {preferredSignInOption}
-                        {/* <Accordion
-                            type="single"
-                            collapsible
-                            className="border-t-[1px] pt-2 mt-6"
-                        >
-                            <AccordionItem value="item-1" className="border-0">
-                                <AccordionTrigger className="flex justify-center space-x-2 text-sm">
-                                    <span>More options</span>
-                                </AccordionTrigger>
-                                <AccordionContent className="mt-4">
-                                    <div className="flex flex-col space-y-4">
-                                        {moreSignInOptions}
-                                    </div>
-                                </AccordionContent>
-                            </AccordionItem>
-                        </Accordion> */}
                     </div>
                 </div>
             </div>
