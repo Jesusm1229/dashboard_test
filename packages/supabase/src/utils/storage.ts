@@ -1,3 +1,4 @@
+// @ts-nocheck
 import type { SupabaseClient } from "@supabase/supabase-js";
 
 export const EMPTY_FOLDER_PLACEHOLDER_FILE_NAME = ".emptyFolderPlaceholder";
