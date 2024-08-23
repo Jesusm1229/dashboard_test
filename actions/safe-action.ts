@@ -1,10 +1,3 @@
-/* import { logger } from "@/utils/logger"; */
-/* import { setupAnalytics } from "@midday/events/server"; */
-/* import { client as RedisClient } from "@midday/kv";
-import { getUser } from "@midday/supabase/cached-queries";
-import { createClient } from "@midday/supabase/server"; */
-/* import * as Sentry from "@sentry/nextjs";
-import { Ratelimit } from "@upstash/ratelimit"; */
 import { createClient } from "@/packages/supabase/src/client/server";
 import { getUser } from "@/packages/supabase/src/queries/cached-queries";
 import {

@@ -1,7 +1,6 @@
 "use server";
 
-/* import { LogEvents } from "@midday/events/events";
- */
+
 import { revalidateTag } from "next/cache";
 import { authActionClient } from "./safe-action";
 import { deleteFolderSchema } from "./schema";

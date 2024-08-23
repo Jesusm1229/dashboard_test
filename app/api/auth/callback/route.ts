@@ -1,9 +1,3 @@
-/* import { Cookies } from "@/utils/constants";
-import { LogEvents } from "@midday/events/events";
-import { setupAnalytics } from "@midday/events/server";
-import { getSession } from "@midday/supabase/cached-queries";
-import { createClient } from "@midday/supabase/server";
-import { addYears } from "date-fns"; */
 // @ts-nocheck
 
 import { createClient } from "@/packages/supabase/src/client/server";

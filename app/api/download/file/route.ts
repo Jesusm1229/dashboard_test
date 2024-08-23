@@ -1,7 +1,4 @@
-/* import { getUser } from "@midday/supabase/cached-queries";
-import { createClient } from "@midday/supabase/server";
-import { download } from "@midday/supabase/storage";
- */
+
 // @ts-nocheck
 import { getUser } from "@/packages/supabase/src/queries/cached-queries";
 import { download } from "@/packages/supabase/src/utils/storage";

@@ -28,7 +28,7 @@ export async function Table({ folders }) {
   return (
     <div>
       <VaultProvider data={data}>
-        <VaultActivity />
+        {/* <VaultActivity /> */}
 
         <div className="flex justify-between items-center h-[32px] mt-6">
           <Breadcrumbs folders={folders} />

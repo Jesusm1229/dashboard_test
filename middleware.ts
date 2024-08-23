@@ -13,8 +13,6 @@ export const config = {
 }
 
 
-/* import { updateSession } from "@midday/supabase/middleware";
-import { createClient } from "@midday/supabase/server"; */
 /* 
 import { type NextRequest, NextResponse } from "next/server";
 import { updateSession } from './utils/supabase/middleware'
