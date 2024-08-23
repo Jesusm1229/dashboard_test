@@ -5,8 +5,11 @@ import * as React from "react";
 import { cn } from "../../../packages/ui/src/utils";
 
 const Popover = PopoverPrimitive.Root;
+Popover.displayName = "Popover";
+
 
 const PopoverTrigger = PopoverPrimitive.Trigger;
+PopoverTrigger.displayName = "PopoverTrigger";
 
 const PopoverContent = React.forwardRef<
   React.ElementRef<typeof PopoverPrimitive.Content>,
