@@ -281,13 +281,16 @@ export function DataTableRow({ data, teamId }: { data: any; teamId: string }) {
               </a>
             )}
           </ContextMenuItem>
+
+          {/*  
+          add later
           {(
             <AlertDialogTrigger asChild>
               <ContextMenuItem className="text-destructive">
                 Delete
               </ContextMenuItem>
             </AlertDialogTrigger>
-          )}
+          )} */}
         </ContextMenuContent>
 
         <AlertDialogContent>
